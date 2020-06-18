@@ -4,16 +4,16 @@
 class Channel
 {
 	static unsigned int			chCount;
-	std::vector<double>			data;
 
 public:
-	Channel(const int dlugosc);
+	std::vector<double>			data;
+	Channel();
 	~Channel();
 };
 
 unsigned int Channel::chCount = 0;
 
-Channel::Channel(const int dlugosc) : data(dlugosc) 
+Channel::Channel() : data(1) 
 {
 	chCount++;
 	std::cout << "\nUtworzono " << chCount << " kanal\n";
@@ -41,10 +41,16 @@ public:
 
 unsigned int Buffer::bCount = 0;
 
-Buffer::Buffer() : kanal(ilosc, Channel(dlugosc))
+Buffer::Buffer() : kanal(ilosc)
 {
 	bCount++;
-	std::cout << "\nUtworzono " << bCount << " bufor\n";
+
+	std::cout << "\nUtworzono " << bCount << " bufor " << kanal.size() << "-kanalowy\n";
+	for (int i = 0; i < ilosc; i++)
+	{
+		kanal[i].data.resize(dlugosc);
+		std::cout << kanal[i].data.size() << '\n';
+	}
 }
 
 Buffer::~Buffer()

@@ -1,7 +1,17 @@
 ﻿#include <iostream>
 
-class Channel;
 
+class Channel
+{
+	double* data;
+
+public:
+	Channel();
+};
+
+Channel::Channel() : data(new double[4]) {};
+
+//=====================================================
 // ============================================
 
 class Buffer
@@ -18,17 +28,7 @@ Buffer::Buffer() : B(new Channel[ilosc]) {};
 
 //==============================================
 
-class Channel
-{
-	double* data;
 
-public:
-	Channel();
-};
-
-Channel::Channel() : data(new double[dlugosc]) {};
-
-//=====================================================
 
 #include <iostream>
 

@@ -18,8 +18,8 @@ Channel::Channel() : data(new double[dlugosc]) {};
 class Buffer
 {
 public:
-	int			dlugosc{ 48000 };
-	int			ilosc{ 5 };
+	int		dlugosc{ 48000 };
+	int		ilosc{ 5 };
 	Channel*	kanal;
 
 	Buffer();
@@ -29,9 +29,6 @@ Buffer::Buffer() : kanal(new Channel[ilosc]) {};
 
 //==============================================
 
-
-
-#include <iostream>
 
 int main()
 {

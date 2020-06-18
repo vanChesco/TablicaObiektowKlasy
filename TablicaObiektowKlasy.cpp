@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 
+//=====================================================
 
 class Channel
 {
@@ -9,22 +10,22 @@ public:
 	Channel();
 };
 
-Channel::Channel() : data(new double[4]) {};
+Channel::Channel() : data(new double[dlugosc]) {};
 
-//=====================================================
+
 // ============================================
 
 class Buffer
 {
 public:
-	int			dlugosc;
-	int			ilosc;
-	Channel*	B;
+	int			dlugosc{ 48000 };
+	int			ilosc{ 5 };
+	Channel*	kanal;
 
 	Buffer();
 };
 
-Buffer::Buffer() : B(new Channel[ilosc]) {};
+Buffer::Buffer() : kanal(new Channel[ilosc]) {};
 
 //==============================================
 

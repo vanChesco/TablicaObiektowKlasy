@@ -2,6 +2,8 @@
 
 class Channel;
 
+// ============================================
+
 class Buffer
 {
 public:
@@ -9,18 +11,24 @@ public:
 	int			ilosc;
 	Channel*	B;
 
-	Buffer() : B(new Channel[ilosc]) {};
+	Buffer();
 };
+
+Buffer::Buffer() : B(new Channel[ilosc]) {};
+
+//==============================================
 
 class Channel
 {
 	double* data;
 
 public:
-	Channel() : data(new double[dlugosc]) {};
-
+	Channel();
 };
 
+Channel::Channel() : data(new double[dlugosc]) {};
+
+//=====================================================
 
 #include <iostream>
 
